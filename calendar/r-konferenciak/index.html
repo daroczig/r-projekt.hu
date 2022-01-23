@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8" />
+<title>R konferenciák | r-projekt.hu</title>
+<link rel="profile" href="https://gmpg.org/xfn/11" />
+<link rel="stylesheet" type="text/css" media="all" href="http://r-projekt.hu/wp-content/themes/twentyten-child/style.css" />
+<link rel="pingback" href="http://r-projekt.hu/xmlrpc.php" />
+<link rel='dns-prefetch' href='//h' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="r-projekt.hu &raquo; hírcsatorna" href="http://r-projekt.hu/feed/" />
+<link rel="alternate" type="application/rss+xml" title="r-projekt.hu &raquo; hozzászólás hírcsatorna" href="http://r-projekt.hu/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/r-projekt.hu\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.18"}};
+			!function(t,a,e){var r,i,n,o=a.createElement("canvas"),l=o.getContext&&o.getContext("2d");function c(t){var e=a.createElement("script");e.src=t,e.defer=e.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(e)}for(n=Array("flag","emoji4"),e.supports={everything:!0,everythingExceptFlag:!0},i=0;i<n.length;i++)e.supports[n[i]]=function(t){var e,a=String.fromCharCode;if(!l||!l.fillText)return!1;switch(l.clearRect(0,0,o.width,o.height),l.textBaseline="top",l.font="600 32px Arial",t){case"flag":return(l.fillText(a(55356,56826,55356,56819),0,0),e=o.toDataURL(),l.clearRect(0,0,o.width,o.height),l.fillText(a(55356,56826,8203,55356,56819),0,0),e===o.toDataURL())?!1:(l.clearRect(0,0,o.width,o.height),l.fillText(a(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),e=o.toDataURL(),l.clearRect(0,0,o.width,o.height),l.fillText(a(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),e!==o.toDataURL());case"emoji4":return l.fillText(a(55358,56794,8205,9794,65039),0,0),e=o.toDataURL(),l.clearRect(0,0,o.width,o.height),l.fillText(a(55358,56794,8203,9794,65039),0,0),e!==o.toDataURL()}return!1}(n[i]),e.supports.everything=e.supports.everything&&e.supports[n[i]],"flag"!==n[i]&&(e.supports.everythingExceptFlag=e.supports.everythingExceptFlag&&e.supports[n[i]]);e.supports.everythingExceptFlag=e.supports.everythingExceptFlag&&!e.supports.flag,e.DOMReady=!1,e.readyCallback=function(){e.DOMReady=!0},e.supports.everything||(r=function(){e.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",r,!1),t.addEventListener("load",r,!1)):(t.attachEvent("onload",r),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&e.readyCallback()})),(r=e.source||{}).concatemoji?c(r.concatemoji):r.wpemoji&&r.twemoji&&(c(r.twemoji),c(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='dashicons-css'  href='http://r-projekt.hu/wp-includes/css/dashicons.min.css?ver=4.8.18' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-symposium-toolbar_admin-css'  href='http://r-projekt.hu/wp-content/plugins/wp-symposium-toolbar/css/wp-symposium-toolbar_admin.css?ver=3223' type='text/css' media='all' />
+<link rel='stylesheet' id='wmsimplecaptcha_style_front-css'  href='http://r-projekt.hu/wp-content/plugins/wm-simple-captcha/assets/css/wmsimplecaptcha_style.css?ver=4.8.18' type='text/css' media='all' />
+<link rel='stylesheet' id='admin-bar-css'  href='http://r-projekt.hu/wp-includes/css/admin-bar.min.css?ver=4.8.18' type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-css'  href='http://r-projekt.hu/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='gabfire-widget-css-css'  href='http://r-projekt.hu/wp-content/plugins/gabfire-widget-pack/css/style.css?ver=4.8.18' type='text/css' media='all' />
+<link rel='stylesheet' id='wprssmi_template_styles-css'  href='http://r-projekt.hu/wp-content/plugins/wp-rss-multi-importer/templates/templates.css?ver=4.8.18' type='text/css' media='all' />
+<link rel='stylesheet' id='wordpress-popular-posts-css'  href='http://r-projekt.hu/wp-content/plugins/wordpress-popular-posts/style/wpp.css?ver=3.3.4' type='text/css' media='all' />
+<link rel='stylesheet' id='simcal-qtip-css'  href='http://r-projekt.hu/wp-content/plugins/google-calendar-events/assets/css/vendor/jquery.qtip.min.css?ver=3.1.9' type='text/css' media='all' />
+<link rel='stylesheet' id='simcal-default-calendar-grid-css'  href='http://r-projekt.hu/wp-content/plugins/google-calendar-events/assets/css/default-calendar-grid.min.css?ver=3.1.9' type='text/css' media='all' />
+<link rel='stylesheet' id='simcal-default-calendar-list-css'  href='http://r-projekt.hu/wp-content/plugins/google-calendar-events/assets/css/default-calendar-list.min.css?ver=3.1.9' type='text/css' media='all' />
+<link rel='stylesheet' id='src-css'  href='http://h?ver=3.1.9' type='text/css' media='h' />
+<link rel='stylesheet' id='media-css'  href='http://r-projekt.hu/wp-admin/css/media.min.css?ver=4.8.18' type='text/css' media='all' />
+<link rel='stylesheet' id='sccss_style-css'  href='http://r-projekt.hu?sccss=1&#038;ver=4.8.18' type='text/css' media='all' />
+<link rel='stylesheet' id='sabai-css'  href='http://r-projekt.hu/wp-content/plugins/sabai/assets/css/main.min.css?ver=1.3.41' type='text/css' media='all' />
+<link rel='stylesheet' id='sabai-font-awesome-css'  href='http://r-projekt.hu/wp-content/plugins/sabai/assets/css/font-awesome.min.css?ver=1.3.41' type='text/css' media='all' />
+<link rel='stylesheet' id='sabai-discuss-css'  href='http://r-projekt.hu/wp-content/plugins/sabai-discuss/assets/css/main.min.css?ver=1.3.41' type='text/css' media='all' />
+<!-- This site uses the Google Analytics by MonsterInsights plugin v6.2.0 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+<script type="text/javascript" data-cfasync="false">
+	/* Function to detect opted out users */
+	function __gaTrackerIsOptedOut() {
+		return document.cookie.indexOf(disableStr + '=true') > -1;
+	}
+
+	/* Disable tracking if the opt-out cookie exists. */
+	var disableStr = 'ga-disable-UA-50492233-1';
+	if ( __gaTrackerIsOptedOut() ) {
+		window[disableStr] = true;
+	}
+
+	/* Opt-out function */
+	function __gaTrackerOptout() {
+	  document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+	  window[disableStr] = true;
+	}
+
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
+
+	__gaTracker('create', 'UA-50492233-1', 'auto');
+	__gaTracker('set', 'forceSSL', true);
+	__gaTracker('send','pageview');
+</script>
+<!-- / Google Analytics by MonsterInsights -->
+<script type='text/javascript' src='http://r-projekt.hu/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='http://r-projekt.hu/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var ajax_object = {"ajax_url":"https:\/\/r-projekt.hu\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://r-projekt.hu/wp-content/plugins/wm-simple-captcha/assets/js/wmsimplecaptcha_scripts.js?ver=4.8.18'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"https:\/\/r-projekt.hu\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://r-projekt.hu/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=_2.7.2_beta'></script>
+<script type='text/javascript' src='http://r-projekt.hu/wp-content/themes/twentyten-child/js/custom.js?ver=8.9.2'></script>
+<link rel='https://api.w.org/' href='http://r-projekt.hu/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://r-projekt.hu/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://r-projekt.hu/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.8.18" />
+<link rel='shortlink' href='http://r-projekt.hu/?p=42043' />
+<link rel="alternate" type="application/json+oembed" href="http://r-projekt.hu/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fr-projekt.hu%2Fcalendar%2Fr-konferenciak%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://r-projekt.hu/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fr-projekt.hu%2Fcalendar%2Fr-konferenciak%2F&#038;format=xml" />
+<link rel="icon" href="http://r-projekt.hu/wp-content/uploads/2014/04/favicon.ico" type="image/x-icon" />
+ <!-- OneAll.com / Social Login for WordPress / v5.3 -->
+<script data-cfasync="false" type="text/javascript">
+ (function() {
+  var oa = document.createElement('script'); oa.type = 'text/javascript';
+  oa.async = true; oa.src = 'http://r-projekt.api.oneall.com/socialize/library.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(oa, s);
+ })();
+</script>
+<!-- Stream WordPress user activity plugin v3.2.0 -->
+				<!-- WordPress Popular Posts v3.3.4 -->
+				<script type="text/javascript">
+
+					var sampling_active = 0;
+					var sampling_rate   = 100;
+					var do_request = false;
+
+					if ( !sampling_active ) {
+						do_request = true;
+					} else {
+						var num = Math.floor(Math.random() * sampling_rate) + 1;
+						do_request = ( 1 === num );
+					}
+
+					if ( do_request ) {
+
+						/* Create XMLHttpRequest object and set variables */
+						var xhr = ( window.XMLHttpRequest )
+						  ? new XMLHttpRequest()
+						  : new ActiveXObject( "Microsoft.XMLHTTP" ),
+						url = 'http://r-projekt.hu/wp-admin/admin-ajax.php',
+						params = 'action=update_views_ajax&token=0f15a1336f&wpp_id=42043';
+						/* Set request method and target URL */
+						xhr.open( "POST", url, true );
+						/* Set request header */
+						xhr.setRequestHeader( "Content-type", "application/x-www-form-urlencoded" );
+						/* Hook into onreadystatechange */
+						xhr.onreadystatechange = function() {
+							if ( 4 === xhr.readyState && 200 === xhr.status ) {
+								if ( window.console && window.console.log ) {
+									window.console.log( xhr.responseText );
+								}
+							}
+						};
+						/* Send request */
+						xhr.send( params );
+
+					}
+
+				</script>
+				<!-- End WordPress Popular Posts v3.3.4 -->
+				<style type="text/css" media="print">#wpadminbar { display:none; }</style>
+<style type="text/css" media="screen">
+	html { margin-top: 32px !important; }
+	* html body { margin-top: 32px !important; }
+	@media screen and ( max-width: 782px ) {
+		html { margin-top: 46px !important; }
+		* html body { margin-top: 46px !important; }
+	}
+</style>
+</head>
+
+<body class="calendar-template-default single single-calendar postid-42043 admin-bar no-customize-support">
+<div id="wrapper" class="hfeed">
+	<div id="header">
+		<!--
+		    <span id="language_flag" style="position: relative;right: -947px;top: 90px;"><a href="/welcome"><img src="http://r-projekt.hu/wp-content/uploads/2014/05/english_flag_smallres.jpg" width="45"></a></span>
+		-->
+				<div id="login_required_to_write_stuff">Új kérdés, megjegyzés vagy válasz írásához <a href="/wp-login.php">jelentkezz be</a> vagy <a href="/wp-login.php?action=register">regisztrálj</a>!</div>
+				<div id="masthead">
+			<div id="branding" role="banner">
+			    <h1 id="site-title"><span>GNU R: szoftver, programozási nyelv, közösség</span></h1>
+			    <!-- <img src="http://r-projekt.hu/wp-content/uploads/2014/04/R-logo-128.png" width="48" alt="R"> -->
+			    <img src="http://r-projekt.hu/wp-content/uploads/2014/05/R-logo-hires-HUN-192-150x150.png" width="48" alt="R">
+			    <div id="site-description">az ingyenes adatelemző szoftver és statisztikai programozási környezet</div>
+			</div><!-- #branding -->
+
+			<div id="access" role="navigation">
+			  				<div class="skip-link screen-reader-text"><a href="#content" title="Skip to content">Skip to content</a></div>
+								<div class="menu-header"><ul id="menu-fomenu" class="menu"><li id="menu-item-75" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-75"><a href="http://r-projekt.hu/">Főoldal</a></li>
+<li id="menu-item-77" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-77"><a href="http://r-projekt.hu/mi-az-r/">Mi az R?</a></li>
+<li id="menu-item-78" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-78"><a href="http://r-projekt.hu/letoltes/">Letöltés</a></li>
+<li id="menu-item-79" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-79"><a href="http://r-projekt.hu/elso-lepesek/">Első lépések</a></li>
+<li id="menu-item-80" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-80"><a href="http://r-projekt.hu/hirek/">Hírek</a></li>
+<li id="menu-item-81" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-81"><a href="http://r-projekt.hu/esemenyek/">Események</a>
+<ul  class="sub-menu">
+	<li id="menu-item-167" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-167"><a href="http://r-projekt.hu/esemenyek/uj-esemeny-bekuldese/">Új esemény beküldése</a></li>
+</ul>
+</li>
+<li id="menu-item-82" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-82"><a href="http://r-projekt.hu/kozosseg/">Közösség</a></li>
+<li id="menu-item-326" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-326"><a href="/kerdesek">Q&#038;A</a>
+<ul  class="sub-menu">
+	<li id="menu-item-327" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-327"><a href="/kerdesek/kerdezz">Új kérdés</a></li>
+	<li id="menu-item-330" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-330"><a href="http://r-projekt.hu/kerdesek/">Kérdések</a></li>
+	<li id="menu-item-328" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-328"><a href="/kerdesek/kategoriak">Kategóriák</a></li>
+	<li id="menu-item-329" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-329"><a href="/kerdesek/cimkek">Címkék</a></li>
+</ul>
+</li>
+<li id="menu-item-89" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-89"><a href="http://r-projekt.hu/segedanyagok/">Segédanyagok</a></li>
+<li id="menu-item-90" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-90"><a href="http://r-projekt.hu/oktatas/">Oktatás</a></li>
+<li id="menu-item-91" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-91"><a href="http://r-projekt.hu/termektamogatas/">Support</a></li>
+<li id="menu-item-364" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-364"><a href="http://r-projekt.hu/welcome/">EN</a></li>
+</ul></div>			</div><!-- #access -->
+		</div><!-- #masthead -->
+	</div><!-- #header -->
+
+	<div id="main">
+
+		<div id="container">
+			<div id="content" role="main">
+
+			
+
+<!--
+				<div id="nav-above" class="navigation">
+					<div class="nav-previous"><a href="http://r-projekt.hu/calendar/r-oktatas/" rel="prev"><span class="meta-nav">&larr;</span> R oktatás</a></div>
+					<div class="nav-next"></div>
+				</div>
+-->
+
+				<div id="post-42043" class="post-42043 calendar type-calendar status-publish hentry">
+					<h1 class="entry-title">R konferenciák</h1>
+
+					<div class="entry-meta">
+												A bejegyzést <a href="http://r-projekt.hu" title="r-projekt honlapjának megtekintése" rel="author external">r-projekt</a> írta 2014. november hó 12. napján 23:25-kor
+					</div><!-- .entry-meta -->
+
+					<div class="entry-content">
+						<div class="simcal-calendar simcal-default-calendar simcal-default-calendar-grid simcal-default-calendar-light" data-calendar-id="42043" data-timezone="UTC" data-offset="0" data-week-start="1" data-calendar-start="1642896000" data-calendar-end="1642896000" data-events-first="0" data-events-last="0">
+			
+			<table class="simcal-calendar-grid"
+			       data-event-bubble-trigger="hover">
+				<thead class="simcal-calendar-head">
+					<tr>
+													<th class="simcal-nav simcal-prev-wrapper" colspan="1">
+								<button class="simcal-nav-button simcal-month-nav simcal-prev" title="Previous Month"><i class="simcal-icon-left"></i></button>
+							</th>
+												<th colspan="5"
+						    class="simcal-nav simcal-current"
+						    data-calendar-current="1642896000">
+							<h3> <span class="simcal-current-year">2022</span>  <span class="simcal-current-month">január</span> </h3>						</th>
+													<th class="simcal-nav simcal-next-wrapper" colspan="1">
+								<button class="simcal-nav-button simcal-month-nav simcal-next" title="Next Month"><i class="simcal-icon-right"></i></button>
+							</th>
+											</tr>
+					<tr>
+													<th class="simcal-week-day simcal-week-day-1"
+								data-screen-small="h"
+							    data-screen-medium="hét"
+							    data-screen-large="hétfő">hét</th>
+														<th class="simcal-week-day simcal-week-day-2"
+								data-screen-small="k"
+							    data-screen-medium="ked"
+							    data-screen-large="kedd">ked</th>
+														<th class="simcal-week-day simcal-week-day-3"
+								data-screen-small="s"
+							    data-screen-medium="sze"
+							    data-screen-large="szerda">sze</th>
+														<th class="simcal-week-day simcal-week-day-4"
+								data-screen-small="c"
+							    data-screen-medium="csü"
+							    data-screen-large="csütörtök">csü</th>
+														<th class="simcal-week-day simcal-week-day-5"
+								data-screen-small="p"
+							    data-screen-medium="pén"
+							    data-screen-large="péntek">pén</th>
+														<th class="simcal-week-day simcal-week-day-6"
+								data-screen-small="s"
+							    data-screen-medium="szo"
+							    data-screen-large="szombat">szo</th>
+															<th class="simcal-week-day simcal-week-day-0"
+								    data-screen-small="v"
+								    data-screen-medium="vas"
+								    data-screen-large="vasárnap">vas</th>
+													</tr>
+				</thead>
+
+				<tbody class="simcal-month simcal-month-1">
+	<tr class="simcal-week simcal-week-52"><td class="simcal-day simcal-day-void "></td>
+<td class="simcal-day simcal-day-void "></td>
+<td class="simcal-day simcal-day-void "></td>
+<td class="simcal-day simcal-day-void "></td>
+<td class="simcal-day simcal-day-void simcal-day-void-last"></td>
+<td class="simcal-day-1 simcal-weekday-6 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">1</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-2 simcal-weekday-0 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">2</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+</tr><tr class="simcal-week simcal-week-52">
+<td class="simcal-day-3 simcal-weekday-1 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">3</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-4 simcal-weekday-2 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">4</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-5 simcal-weekday-3 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">5</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-6 simcal-weekday-4 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">6</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-7 simcal-weekday-5 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">7</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-8 simcal-weekday-6 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">8</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-9 simcal-weekday-0 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">9</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+</tr><tr class="simcal-week simcal-week-53">
+<td class="simcal-day-10 simcal-weekday-1 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">10</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-11 simcal-weekday-2 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">11</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-12 simcal-weekday-3 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">12</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-13 simcal-weekday-4 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">13</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-14 simcal-weekday-5 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">14</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-15 simcal-weekday-6 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">15</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-16 simcal-weekday-0 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">16</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+</tr><tr class="simcal-week simcal-week-54">
+<td class="simcal-day-17 simcal-weekday-1 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">17</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-18 simcal-weekday-2 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">18</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-19 simcal-weekday-3 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">19</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-20 simcal-weekday-4 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">20</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-21 simcal-weekday-5 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">21</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-22 simcal-weekday-6 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">22</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-23 simcal-weekday-0 simcal-today simcal-present simcal-day" data-events-count="0">
+	<div style="border: 1px solid #FF0000;">
+		<span class="simcal-day-label simcal-day-number" style="background-color: #FF0000; color: #ffffff">23</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+</tr><tr class="simcal-week simcal-week-55">
+<td class="simcal-day-24 simcal-weekday-1 simcal-future simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">24</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-25 simcal-weekday-2 simcal-future simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">25</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-26 simcal-weekday-3 simcal-future simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">26</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-27 simcal-weekday-4 simcal-future simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">27</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-28 simcal-weekday-5 simcal-future simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">28</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-29 simcal-weekday-6 simcal-future simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">29</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-30 simcal-weekday-0 simcal-future simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">30</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+</tr><tr class="simcal-week simcal-week-56">
+<td class="simcal-day-31 simcal-weekday-1 simcal-future simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">31</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day simcal-day-void "></td>
+<td class="simcal-day simcal-day-void "></td>
+<td class="simcal-day simcal-day-void "></td>
+<td class="simcal-day simcal-day-void "></td>
+<td class="simcal-day simcal-day-void "></td>
+<td class="simcal-day simcal-day-void simcal-day-void-last"></td>
+	</tr>
+</tbody>
+
+			</table>
+
+			<div class="simcal-ajax-loader simcal-spinner-top" style="display: none;"><i class="simcal-icon-spinner simcal-icon-spin"></i></div></div>											</div><!-- .entry-content -->
+
+					<div id="entry-author-info">
+						<div id="author-avatar">
+							<img src="http://r-projekt.hu/wp-content/uploads/2014/05/R-logo-hires-HUN-192-150x150.png" width="60" height="60" alt="r-projekt" class="avatar avatar-60 wp-user-avatar wp-user-avatar-60 alignnone photo" />						</div><!-- #author-avatar -->
+						<div id="author-description">
+							<h2>About r-projekt</h2>
+							A magyar R oldal							<div id="author-link">
+								<a href="http://r-projekt.hu/author/r-projekt/" rel="author">
+									View all posts by r-projekt <span class="meta-nav">&rarr;</span>								</a>
+							</div><!-- #author-link	-->
+						</div><!-- #author-description -->
+					</div><!-- #entry-author-info -->
+
+				</div>
+
+				
+			<div id="comments">
+
+
+
+
+</div><!-- #comments -->
+
+
+			</div><!-- #content -->
+		</div><!-- #container -->
+
+
+		<div id="primary" class="widget-area" role="complementary">
+			<ul class="xoxo">
+
+<li id="gabfire_share_widget-2" class="widget-container gabfire_share_widget"><h3 class="widget-title">Megosztás</h3><a target="_blank" rel="nofollow" class="facebook" href="https://www.facebook.com/share.php?u=http://r-projekt.hu/calendar/r-konferenciak/&t=R konferenciák" title="Share on Facebook ">Facebook</a><a target="_blank" rel="nofollow" class="twitter" href="https://twitter.com/home?status=R konferenciák http://r-projekt.hu/calendar/r-konferenciak/" title="Share on Twitter ">Twitter</a><a target="_blank" rel="nofollow" class="plus1" href="https://plusone.google.com/_/+1/confirm?hl=en&url=http://r-projekt.hu/calendar/r-konferenciak/" title="Share on Google1 ">Google1</a><a target="_blank" rel="nofollow" class="email" href="/cdn-cgi/l/email-protection#8fb0fcfaede5eaecfbb2fda2fffde0e5eae4fba1e7faaabdbfaabcceaabdbfddaabdbfe4e0e1e9eafdeae1ece6aaccbcaacebee4a9eee2ffb4ede0ebf6b2c6aabdbffdeaece0e2e2eae1ebaabdbffbe7e6fcaabdbfffeee8eaaabcceaabdbfddaabdbfe4e0e1e9eafdeae1ece6aaccbcaacebee4a1aabfced6e0faaabdbfeceee1aabdbffdeaeeebaabdbfe6fbaabdbfe0e1aabcceaabdbfe7fbfbffaabcceaabdc9aabdc9fda2fffde0e5eae4fba1e7faaabdc9eceee3eae1ebeefdaabdc9fda2e4e0e1e9eafdeae1ece6eee4aabdc9" title="Email a Friend : R konferenciák">Email</a><a target="_blank" rel="nofollow" class="google2" href="https://www.google.com/bookmarks/mark?op=add&bkmk=http://r-projekt.hu/calendar/r-konferenciak/&title=R konferenciák" title="Share on Google ">Google</a><div class="clear clearfix"></div><div class='clear'></div></li><li id="gce_widget-2" class="widget-container widget_gce_widget"><h3 class="widget-title">Eseménynaptár</h3><div class="simcal-calendar simcal-default-calendar simcal-default-calendar-grid simcal-default-calendar-light" data-calendar-id="42041" data-timezone="Europe/Helsinki" data-offset="7200" data-week-start="1" data-calendar-start="1642888800" data-calendar-end="1642888800" data-events-first="1497974400" data-events-last="1500393600">
+			
+			<table class="simcal-calendar-grid"
+			       data-event-bubble-trigger="hover">
+				<thead class="simcal-calendar-head">
+					<tr>
+													<th class="simcal-nav simcal-prev-wrapper" colspan="1">
+								<button class="simcal-nav-button simcal-month-nav simcal-prev" title="Previous Month"><i class="simcal-icon-left"></i></button>
+							</th>
+												<th colspan="5"
+						    class="simcal-nav simcal-current"
+						    data-calendar-current="1642888800">
+							<h3> <span class="simcal-current-year">2022</span>  <span class="simcal-current-month">január</span> </h3>						</th>
+													<th class="simcal-nav simcal-next-wrapper" colspan="1">
+								<button class="simcal-nav-button simcal-month-nav simcal-next" title="Next Month"><i class="simcal-icon-right"></i></button>
+							</th>
+											</tr>
+					<tr>
+													<th class="simcal-week-day simcal-week-day-1"
+								data-screen-small="h"
+							    data-screen-medium="hét"
+							    data-screen-large="hétfő">hét</th>
+														<th class="simcal-week-day simcal-week-day-2"
+								data-screen-small="k"
+							    data-screen-medium="ked"
+							    data-screen-large="kedd">ked</th>
+														<th class="simcal-week-day simcal-week-day-3"
+								data-screen-small="s"
+							    data-screen-medium="sze"
+							    data-screen-large="szerda">sze</th>
+														<th class="simcal-week-day simcal-week-day-4"
+								data-screen-small="c"
+							    data-screen-medium="csü"
+							    data-screen-large="csütörtök">csü</th>
+														<th class="simcal-week-day simcal-week-day-5"
+								data-screen-small="p"
+							    data-screen-medium="pén"
+							    data-screen-large="péntek">pén</th>
+														<th class="simcal-week-day simcal-week-day-6"
+								data-screen-small="s"
+							    data-screen-medium="szo"
+							    data-screen-large="szombat">szo</th>
+															<th class="simcal-week-day simcal-week-day-0"
+								    data-screen-small="v"
+								    data-screen-medium="vas"
+								    data-screen-large="vasárnap">vas</th>
+													</tr>
+				</thead>
+
+				<tbody class="simcal-month simcal-month-1">
+	<tr class="simcal-week simcal-week-52"><td class="simcal-day simcal-day-void "></td>
+<td class="simcal-day simcal-day-void "></td>
+<td class="simcal-day simcal-day-void "></td>
+<td class="simcal-day simcal-day-void "></td>
+<td class="simcal-day simcal-day-void simcal-day-void-last"></td>
+<td class="simcal-day-1 simcal-weekday-6 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">1</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-2 simcal-weekday-0 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">2</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+</tr><tr class="simcal-week simcal-week-52">
+<td class="simcal-day-3 simcal-weekday-1 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">3</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-4 simcal-weekday-2 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">4</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-5 simcal-weekday-3 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">5</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-6 simcal-weekday-4 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">6</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-7 simcal-weekday-5 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">7</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-8 simcal-weekday-6 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">8</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-9 simcal-weekday-0 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">9</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+</tr><tr class="simcal-week simcal-week-53">
+<td class="simcal-day-10 simcal-weekday-1 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">10</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-11 simcal-weekday-2 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">11</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-12 simcal-weekday-3 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">12</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-13 simcal-weekday-4 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">13</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-14 simcal-weekday-5 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">14</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-15 simcal-weekday-6 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">15</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-16 simcal-weekday-0 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">16</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+</tr><tr class="simcal-week simcal-week-54">
+<td class="simcal-day-17 simcal-weekday-1 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">17</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-18 simcal-weekday-2 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">18</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-19 simcal-weekday-3 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">19</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-20 simcal-weekday-4 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">20</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-21 simcal-weekday-5 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">21</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-22 simcal-weekday-6 simcal-past simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">22</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-23 simcal-weekday-0 simcal-today simcal-present simcal-day" data-events-count="0">
+	<div style="border: 1px solid #1e73be;">
+		<span class="simcal-day-label simcal-day-number" style="background-color: #1e73be; color: #ffffff">23</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+</tr><tr class="simcal-week simcal-week-55">
+<td class="simcal-day-24 simcal-weekday-1 simcal-future simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">24</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-25 simcal-weekday-2 simcal-future simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">25</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-26 simcal-weekday-3 simcal-future simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">26</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-27 simcal-weekday-4 simcal-future simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">27</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-28 simcal-weekday-5 simcal-future simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">28</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-29 simcal-weekday-6 simcal-future simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">29</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day-30 simcal-weekday-0 simcal-future simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">30</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+</tr><tr class="simcal-week simcal-week-56">
+<td class="simcal-day-31 simcal-weekday-1 simcal-future simcal-day" data-events-count="0">
+	<div>
+		<span class="simcal-day-label simcal-day-number">31</span>
+		<span class="simcal-no-events"></span>
+		<span class="simcal-events-dots" style="display: none;"></span>
+	</div>
+</td>
+<td class="simcal-day simcal-day-void "></td>
+<td class="simcal-day simcal-day-void "></td>
+<td class="simcal-day simcal-day-void "></td>
+<td class="simcal-day simcal-day-void "></td>
+<td class="simcal-day simcal-day-void "></td>
+<td class="simcal-day simcal-day-void simcal-day-void-last"></td>
+	</tr>
+</tbody>
+
+			</table>
+
+			<div class="simcal-ajax-loader simcal-spinner-top" style="display: none;"><i class="simcal-icon-spinner simcal-icon-spin"></i></div></div></li>
+<!-- WordPress Popular Posts Plugin v3.3.4 [W] [daily] [views] [regular] -->
+<li id="wpp-4" class="widget-container popular-posts">
+<h3 class="widget-title">Népszerű oldalak</h3>
+<ul class="wpp-list">
+<li><a href="http://r-projekt.hu/oktatas/" title="Oktatás" class="wpp-post-title" target="_self">Oktatás</a> </li>
+<li><a href="http://r-projekt.hu/kerdesek/" title="Kérdések" class="wpp-post-title" target="_self">Kérdések</a> </li>
+<li><a href="http://r-projekt.hu/letoltes/" title="Letöltés" class="wpp-post-title" target="_self">Letöltés</a> </li>
+
+</ul>
+</li>
+<!-- End WordPress Popular Posts Plugin v3.3.4 -->
+<li id="sabai_platform_wordpress_sabai_questions_popular-2" class="widget-container widget_sabai_platform_wordpress_sabai_questions_popular"><h3 class="widget-title">Népszerű kérdések</h3><div class="sabai sabai-wordpress-widget sabai-widget-questions-popular sabai-clearfix"><ul class="sabai-wordpress-widget-entries">
+  <li class="sabai-wordpress-widget-entry-with-image"><div class="sabai-wordpress-widget-image"><img src="http://r-projekt.hu/wp-content/uploads/2014/05/R-logo-hires-HUN-192-150x150.png" width="24" height="24" style="width:24px; height:24px;" alt="r-projekt" title="r-projekt" /></div>
+    <div class="sabai-wordpress-widget-main">
+      <a title="Milyen a jó kérdés?" href="http://r-projekt.hu/kerdesek/kerdes/milyen-a-jo-kerdes">Milyen a jó kérdés?</a>
+      <ul><li><i class="fa fa-thumbs-up"></i> 1</li><li><i class="fa fa-comments"></i> 2</li><li><i class="fa fa-star"></i> 1</li></ul>
+    </div>
+  </li>
+</ul>
+</div></li>
+<!-- WordPress Popular Posts Plugin v3.3.4 [W] [weekly] [views] [regular] -->
+<li id="wpp-3" class="widget-container popular-posts">
+<h3 class="widget-title">Népszerű cikkek</h3>
+<ul class="wpp-list">
+<li><a href="http://r-projekt.hu/2014/09/06/romain-francois-r-es-c-eloadasa/" title="Romain Francois: R és C++ előadása" class="wpp-post-title" target="_self">Romain Francois: R és C++ előadása</a> </li>
+<li><a href="http://r-projekt.hu/2014/09/03/plotly-kollaborativ-interaktiv-adatvizualizacio/" title="Plotly &#8211; kollaboratív interaktív adatvizualizáció" class="wpp-post-title" target="_self">Plotly &#8211; kollaboratív interaktív adatvizualizáció</a> </li>
+<li><a href="http://r-projekt.hu/2015/07/01/shinyr-bevezetes/" title="ShinyR bevezetés" class="wpp-post-title" target="_self">ShinyR bevezetés</a> </li>
+<li><a href="http://r-projekt.hu/2014/11/29/rccp-tobb-mint-300-csomagban/" title="Rccp: több mint 300 csomagban" class="wpp-post-title" target="_self">Rccp: több mint 300 csomagban</a> </li>
+<li><a href="http://r-projekt.hu/2015/07/01/adatok-importalasa/" title="Adatok importálása" class="wpp-post-title" target="_self">Adatok importálása</a> </li>
+
+</ul>
+</li>
+<!-- End WordPress Popular Posts Plugin v3.3.4 -->
+		<li id="recent-posts-3" class="widget-container widget_recent_entries">		<h3 class="widget-title">Legfrissebb cikkek</h3>		<ul>
+					<li>
+				<a href="http://r-projekt.hu/2016/12/23/hol-a-szkript/">Hol a szkript?</a>
+						</li>
+					<li>
+				<a href="http://r-projekt.hu/2016/06/28/user-2016-stanford-elso-nap/">useR! 2016 @ Stanford elso nap</a>
+						</li>
+					<li>
+				<a href="http://r-projekt.hu/2015/08/08/r-es-python/">R és python</a>
+						</li>
+					<li>
+				<a href="http://r-projekt.hu/2015/07/03/user-2015-zaro-gondolatok/">useR! 2015 záró gondolatok</a>
+						</li>
+					<li>
+				<a href="http://r-projekt.hu/2015/07/03/user-2015-eloadasok-2/">useR! 2015 előadások #2</a>
+						</li>
+				</ul>
+		</li>		<li id="sabai_platform_wordpress_sabai_questions_askbtn-2" class="widget-container widget_sabai_platform_wordpress_sabai_questions_askbtn"><div class="sabai sabai-wordpress-widget sabai-widget-questions-askbtn sabai-clearfix"><a href="http://r-projekt.hu/kerdesek/kerdezz" class="sabai-btn sabai-btn-lg sabai-btn-primary">Kérdése(d) van?</a></div></li>			</ul>
+		</div><!-- #primary .widget-area -->
+
+	</div><!-- #main -->
+
+	<div id="footer" role="contentinfo">
+		<div id="colophon">
+
+
+
+			<div id="site-info">
+				<a href="http://r-projekt.hu/" title="r-projekt.hu" rel="home">
+					r-projekt.hu
+				</a>
+				© 2022 | Üzemeltető: <a href="/impresszum">rapporter.net</a> | Honlapmotor: <a href="http://wphu.org/" target="_blank">Wordpress</a> | Design: <a href="https://theme.wordpress.com/themes/twentyten/" target="_blank">TwentyTen</a>
+			</div><!-- #site-info -->
+
+		</div><!-- #colophon -->
+	</div><!-- #footer -->
+
+</div><!-- #wrapper -->
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type='text/javascript' src='http://r-projekt.hu/wp-includes/js/admin-bar.min.js?ver=4.8.18'></script>
+<script type='text/javascript' src='http://r-projekt.hu/wp-includes/js/comment-reply.min.js?ver=4.8.18'></script>
+<script type='text/javascript' src='http://r-projekt.hu/wp-content/plugins/google-calendar-events/assets/js/vendor/jquery.qtip.min.js?ver=3.1.9'></script>
+<script type='text/javascript' src='http://r-projekt.hu/wp-content/plugins/google-calendar-events/assets/js/vendor/moment.min.js?ver=3.1.9'></script>
+<script type='text/javascript' src='http://r-projekt.hu/wp-content/plugins/google-calendar-events/assets/js/vendor/moment-timezone-with-data.min.js?ver=3.1.9'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var simcal_default_calendar = {"ajax_url":"\/wp-admin\/admin-ajax.php","nonce":"47e774ca83","locale":"hu_HU","text_dir":"ltr","months":{"full":["janu\u00e1r","febru\u00e1r","m\u00e1rcius","\u00e1prilis","m\u00e1jus","j\u00fanius","j\u00falius","augusztus","szeptember","okt\u00f3ber","november","december"],"short":["jan","feb","M\u00e1r","\u00e1pr","m\u00e1j","j\u00fan","J\u00fal","aug","Sze","okt","nov","dec"]},"days":{"full":["vas\u00e1rnap","h\u00e9tf\u0151","kedd","szerda","cs\u00fct\u00f6rt\u00f6k","p\u00e9ntek","szombat"],"short":["vas","h\u00e9t","ked","sze","cs\u00fc","p\u00e9n","szo"]},"meridiem":{"AM":"DE.","am":"de.","PM":"DU.","pm":"du."}};
+var simcal_default_calendar = {"ajax_url":"\/wp-admin\/admin-ajax.php","nonce":"47e774ca83","locale":"hu_HU","text_dir":"ltr","months":{"full":["janu\u00e1r","febru\u00e1r","m\u00e1rcius","\u00e1prilis","m\u00e1jus","j\u00fanius","j\u00falius","augusztus","szeptember","okt\u00f3ber","november","december"],"short":["jan","feb","M\u00e1r","\u00e1pr","m\u00e1j","j\u00fan","J\u00fal","aug","Sze","okt","nov","dec"]},"days":{"full":["vas\u00e1rnap","h\u00e9tf\u0151","kedd","szerda","cs\u00fct\u00f6rt\u00f6k","p\u00e9ntek","szombat"],"short":["vas","h\u00e9t","ked","sze","cs\u00fc","p\u00e9n","szo"]},"meridiem":{"AM":"DE.","am":"de.","PM":"DU.","pm":"du."}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://r-projekt.hu/wp-content/plugins/google-calendar-events/assets/js/default-calendar.min.js?ver=3.1.9'></script>
+<script type='text/javascript' src='http://h?ver=3.1.9'></script>
+<script type='text/javascript' src='http://r-projekt.hu/wp-content/plugins/google-calendar-events/assets/js/vendor/imagesloaded.pkgd.min.js?ver=3.1.9'></script>
+<script type='text/javascript' src='http://r-projekt.hu/wp-includes/js/wp-embed.min.js?ver=4.8.18'></script>
+		<div id="wpadminbar" class="nojq nojs">
+							<a class="screen-reader-shortcut" href="#wp-toolbar" tabindex="1">Tovább az eszköztárra</a>
+						<div class="quicklinks" id="wp-toolbar" role="navigation" aria-label="Eszköztár" tabindex="0">
+				<ul id="wp-admin-bar-top-secondary" class="ab-top-secondary ab-top-menu">
+		<li id="wp-admin-bar-search" class="admin-bar-search"><div class="ab-item ab-empty-item" tabindex="-1"><form action="http://r-projekt.hu/" method="get" id="adminbarsearch"><input class="adminbar-input" name="s" id="adminbar-search" type="text" value="" maxlength="150" /><input type="submit" class="adminbar-button" value="Keresés"/></form></div>		</li>
+		<li id="wp-admin-bar-my-account" class="menupop wpst-visitor with-avatar"><a class="ab-item" aria-haspopup="true" href="http://r-projekt.hu" title="My Account">Üdv, látogató!<img src="https://1.gravatar.com/avatar/?s=26&#038;r=g" width="26" height="26" alt="" class="avatar avatar-26 wp-user-avatar wp-user-avatar-26 photo avatar-default" /></a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-my-account-default" class="ab-submenu">
+		<li id="wp-admin-bar-174" class="wps_login_login"><a class="ab-item" tabindex="-1" href="http://r-projekt.hu/wp-login.php">Bejelentkezés</a>		</li>
+		<li id="wp-admin-bar-175" class="wps_login_elfelejtett_jelsz"><a class="ab-item" tabindex="-1" href="http://r-projekt.hu/wp-login.php?action=lostpassword">Elfelejtett jelszó</a>		</li>
+		<li id="wp-admin-bar-176" class="wps_login_regisztrci"><a class="ab-item" tabindex="-1" href="http://r-projekt.hu/wp-login.php?action=register">Regisztráció</a>		</li></ul></div>		</li></ul>			</div>
+					</div>
+
+		</body>
+</html>

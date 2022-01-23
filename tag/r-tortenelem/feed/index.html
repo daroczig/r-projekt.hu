@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>R történelem &#8211; r-projekt.hu</title>
+	<atom:link href="http://r-projekt.hu/tag/r-tortenelem/feed/" rel="self" type="application/rss+xml" />
+	<link>http://r-projekt.hu</link>
+	<description>R: az ingyenes adatelemző szoftver és statisztikai programozási környezet</description>
+	<lastBuildDate>Fri, 26 Mar 2021 00:15:32 +0000</lastBuildDate>
+	<language>hu</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.8.18</generator>
+	<item>
+		<title>R, de miért is használjam? &#8211; II.</title>
+		<link>http://r-projekt.hu/2010/07/29/r-de-miert-is-hasznaljam-ii/</link>
+		<comments>http://r-projekt.hu/2010/07/29/r-de-miert-is-hasznaljam-ii/#comments</comments>
+		<pubDate>Thu, 29 Jul 2010 08:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[adatbanyaszat.blog.hu]]></dc:creator>
+				<category><![CDATA[Egyéb]]></category>
+		<category><![CDATA[R történelem]]></category>
+		<category><![CDATA[tutorial]]></category>
+
+		<guid isPermaLink="false">http://r-projekt.hu/?p=216</guid>
+		<description><![CDATA[Az előző részben megvizsgáltuk milyen is elvileg egy ideális nyelv egy számítógépes nyelvész számára. Most sorra vesszük hogy ennek mennyiben felel meg az R statisztikai programozási nyelv. Vegyük végig a pontokat 1. A listák beépített támogatása Igen, sőt! 2. Automatikus &#8230; <a href="http://r-projekt.hu/2010/07/29/r-de-miert-is-hasznaljam-ii/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>Az <a href="http://szamitogepesnyelveszet.blogspot.com/2010/07/r-de-miert-is-hasznaljam-i.html" target="_blank">előző részben</a> megvizsgáltuk milyen is elvileg egy ideális nyelv egy számítógépes nyelvész számára. Most sorra vesszük hogy ennek mennyiben felel meg az <a href="http://www.r-project.org/" target="_blank">R</a> statisztikai programozási nyelv.</p>
+<p><span id="more-216"></span></p>
+<div><b>Vegyük végig a pontokat</b></div>
+<div>
+1. A listák beépített támogatása<br />
+Igen, sőt!<br />
+2. Automatikus tárhelyvezérlés<br />
+Ezen sem lepődünk meg, hiszen manapság már egy cool nyelvnek ezt alapból tudnia kell<br />
+3. dinamikus típuskezelés (de mondhatnám hogy dinamikus gépelés)<br />
+Ezzel sem kell sokat törődnöd, nincs String name = &#8220;Zoli&#8221;, nem fogsz egy Integert byte-ba tenni és elvérezni.<br />
+4. első-osztályú függvények<br />
+Elég itt idézni az <a href="http://cran.r-project.org/doc/manuals/R-lang.html" target="_blank">R Language Definition</a> idevágó részét: &#8220;In R functions are objects and can be manipulated in much the same way as any other object. Functions (or more precisely, function closures) &#8221; azaz első osztályú függvények a nyelv alapjai.<br />
+5. egységes szintaxis<br />
+Nagyon kevés nyelv van amelyiknek nem egységes a szintaxisa és az R nem tartozik közéjük.<br />
+6. interaktív környezet<br />
+A CommonLISP, Scheme és Python által megkezdett hagyományhoz hűen az R is rendelkezik egy szép interaktív környezettel. Itt talán még intenzívebben használják ezt.<br />
+7. Bővíthetőség<br />
+A Comprehensive R Archive Network szinte minden feladathoz kínál csomagot. Könnyen lehet egy új csomagot installálni és szabadon módosíthatod ha kell cuccot igényeid szerint. (A nyílt forráskód előnye :D)<br />
+8. Történeti háttér és kultúra<br />
+Erről külön is szólni fogunk!<br />
+9. Statisztikai függvények támogatása<br />
+Egy statisztikai programozási nyelv alapból támogatja ezeket, ugye ez nem lepett meg. Ajánlom figyelmedbe a Language Definition dokumentumot.<br />
+10. Speciális adatstruktúrák natív támogatása<br />
+Ha probabilisztikus megközelítésre adjuk fejünket szükségünk lesz a listákon kívül vektorokra, mátrixokra és egyéb félelmetes nevű dolgokra. Ha érdekel mi mindent támogat az R itt egy jó <a href="http://www.biw.kuleuven.be/vakken/statisticsbyr/someDataStructures.htm" target="_blank">oldal</a>.</div>
+<p><b>Egy kis történeti háttér</b></p>
+<p>Az R nyelv az S nyelven alapul amit John Chambers 1975-ben a Bell Labs keretein belül fejlesztette ki. Az informatika területén 35 évesnek lenni matuzsálemi kornak számít, viszont egy stabil és igen hozzáértő kör alakult ki a felhasználókból ez idő alatt. Az R 1993-ban tűnt fel, és létezik még egy S-Plus nevű testvére, amely kereskedelmi szoftver.</p>
+<p>Aucklandi atyákat az eredeti S nyelv mellett a Scheme egyszerűsége inspirálta, aminek én mint Scheme rajongó nagyon örülök. A nyelv hamarosan nagyon népszerű lett a statisztikusok körében, így a nyelv egymást követő verziói általában nagyon stabilak.</p>
+<p>A kilencvenes évek végén elkezdődött az adatok forradalma. Egyrészt az informatika világa egyre több adatot produkál, (talán ennek hatására) másrészt a humán és társadalom tudományok is egyre jobban a kísérleti és begyűjthető adatok felé fordultak. Egyre többen kezdték el használni különböző statisztikai programcsomagokat ismerték fel azok korlátait is. Az R felhasználói tábora valamikor az ezredforduló körül hirtelen megugrott és azóta is folyamatosan bővül.</p>
+<p>Ez a történet csak tovább erősíti a nyelvet. A kemény mag továbbra is szinte változatlan és egyre jobb rendszert fejleszt. A speciális területek művelői egyre több csomagot írnak és publikálna. Az így létrejött nyilvánosság az esetleges hibák felfedezését meggyorsította, a fejlesztők közötti együttműködést elősegítette és még jobb csomagokat eredményezett. Az online fellelhető dokumentáció igen magas színvonalú, habár nagyon technikai jellegű. Úgy tűnik hogy még várnunk kell hogy a &#8220;kocka&#8221; fejlesztői mag észrevegye ezt és lépjen az érthetőség irányába.</p>
+<p>A hosszú történet azzal is jár hogy sok jó könyvet találhatsz (habár ezek általában drágák) és rengeteg publikációt olvashatsz. Könnyű kommunikálni eredményeidet és nem kell sokat magyarázkodnod közben.</p>
+<p><b>Hátrányok</b></p>
+<ol>
+<li>Az R nem egy egyszerű nyelv</li>
+<li>aki nem ismeri a lisp dialektusokat annak az R szintaxisa nagyon idegen lehet</li>
+<li>nehéz egyszerre statisztikát és R programozást tanulni</li>
+</ol>
+<p><b>Hogyan tovább?</b><br />
+Ha szeretnél még többet megtudni a nyelvről, esetleg kipróbálnád és tanulnád érdemes elolvasnod <a href="http://szamitogepesnyelveszet.blogspot.com/2010/05/valoszinuseg-statisztika-es-nyelv.html" target="_blank">Valószínűség, statisztika és nyelv</a> című korábbi posztomat, ami segít eligazodni hogy hol érdemes kezdeni.</p>
+<div></div>
+<p>Via: <a title="R, de miért is használjam? - II." href="http://szamitogepesnyelveszet.blogspot.com/2010/07/r-de-miert-is-hasznaljam-ii.html" target="_blank">R, de miért is használjam? &#8211; II.</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://r-projekt.hu/2010/07/29/r-de-miert-is-hasznaljam-ii/feed/</wfw:commentRss>
+		<slash:comments>572</slash:comments>
+		</item>
+		<item>
+		<title>R, de miért is használjam? &#8211; I.</title>
+		<link>http://r-projekt.hu/2010/07/29/r-de-miert-is-hasznaljam-i/</link>
+		<comments>http://r-projekt.hu/2010/07/29/r-de-miert-is-hasznaljam-i/#comments</comments>
+		<pubDate>Thu, 29 Jul 2010 04:21:00 +0000</pubDate>
+		<dc:creator><![CDATA[szamitogepesnyelveszet.blogspot.hu]]></dc:creator>
+				<category><![CDATA[Egyéb]]></category>
+		<category><![CDATA[R történelem]]></category>
+
+		<guid isPermaLink="false">http://r-projekt.hu/?p=218</guid>
+		<description><![CDATA[Sok olvasó kérdezte miért is használjon R-t, hiszen a Python nyelv ideális nyelvészek számára, nem beszélve az nltk-ról. Senkit sem szeretnék lebeszélni megszokott eszközeinek használatáról, de vannak esetek amikor az R használata egyszerűbb, természetesebb és hatékonyabb. Most azt szeretném bemutatni &#8230; <a href="http://r-projekt.hu/2010/07/29/r-de-miert-is-hasznaljam-i/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>Sok olvasó kérdezte miért is használjon R-t, hiszen a Python nyelv ideális nyelvészek számára, nem beszélve az nltk-ról. Senkit sem szeretnék lebeszélni megszokott eszközeinek használatáról, de vannak esetek amikor az R használata egyszerűbb, természetesebb és hatékonyabb. Most azt szeretném bemutatni miért érdemes elgondolkodni más eszközök használatáról is.</p>
+<p><span id="more-218"></span></p>
+<p><b>Az nltk dizájn hátrányai</b><br />
+Eddig a legjobb cikk amivel találkoztam az nltk mögötti dizájn filozófiáról Edward Loper NLTK: <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.108.805&amp;rep=rep1&amp;type=pdf" target="_blank">Building a Pedagogical Toolkit in Python</a> című írása. Érdekes milyen követelményeket vettek figyelembe a rendszer tervezése során:</p>
+<ul>
+<li>könnyű használhatóság</li>
+<li>konzisztencia</li>
+<li>bővíthetőség</li>
+<li>dokumentáció</li>
+<li>egyszerűség</li>
+<li>modularitás</li>
+</ul>
+<p>Nyilván ezeket minden rendszernél szeretjük látni. De ne feledjük hogy gyakran kell kompromisszumokat kötnünk hogy az elkészült rendszer pl gyors legyen, vagy &#8220;állja a sarat&#8221; nagy igénybevétel esetén is. Azonban az nltk egy pedagógiai céllal készült eszköz. Loper éppen ezért emeli ki írásában hogy <b>milyen követelményeknek nem kell megfelelnie</b> az nltk-nak. Nézzük mik is ezek:</p>
+<ul>
+<li>nem kell mindenre kiterjedő, átfogó rendszert alkotni</li>
+<li>a teljesítményt épp annyira kell optimalizálni hogy diák projekteket lehessen kivitelezni vele</li>
+<li>okoskodás, a fenti ponthoz kapcsolódva nem trükkös hack-kek sorával kell tuningolni a programokat, hanem tiszta átlátható implementációt kell készíteni (hogy a diákok láthassák a forráskódban miképp valósítottak meg egy-egy elképzelést)</li>
+</ul>
+<p>Szerencsére az nltk annyira jól sikerült hogy nem igazán vesszük észre &#8220;hiányosságait&#8221;, sőt egyes moduljait az iparban is felhasználják (habár itt figyelembe kell venni hogy a nyílt forráskódot módosítják néha a jobb teljesítmény elérése érdekében).<br />
+<b><br />
+Milyen követelményeknek kell megfelelnie egy számítógépes nyelvészetben használt programozási nyelvnek?</b><br />
+Erre a kérdésre mindenki máshogy válaszolna nyilván, sőt úgy tűnik az ipar letette a voksát a Java mellett (követve az IT egész világát). Természetesen akadnak kivételek és sok számítógépes nyelvészeti feladatot egyszerűen túl bonyolult Java-ban elvégezni. Ha a mesterséges intelligencia felől közelítjük meg a kérdést (hiszen tekinthetjük kedvenc tudományunkat az AI egy részterületének is), akkor sokaknak rögtön eszébe jutnak az olyan egzotikus nyelvek mint a LISP, Scheme, Prolog. Nem véletlenül, a mesterséges intelligencia programozás klasszikusa, <a href="http://norvig.com/paip.html" target="_blank">Norvig PAIP</a>-ja kora ellenére még ma is kötelező olvasmány ezen a területen, még ma is hatással van a kezdőkre és profikra egyaránt. Ebben nagy érdekes követelményeket fogalmaz meg a szerző egy AI programozásban hasznos nyelvvel szemben:</p>
+<ol>
+<li>built-in support for lists</li>
+<li>automatic storage management</li>
+<li>dynamic typing</li>
+<li>first-class functions</li>
+<li>uniform syntax</li>
+<li>interactive environment</li>
+<li>extensibility</li>
+<li>history</li>
+</ol>
+<p>A listára ma is rábólintunk, talán két dolgot tennénk hozzá. Egyrészt nem szégyenkezzünk, számít a gyorsaság. Másrészt már a könyv publikálásakor is feljövőben volt a sztochasztikus megközelítés amely mára az uralkodó paradigmává vált, így joggal kérhetjük ideális nyelvünktől hogy tegye könnyűvé életünk és támogassa a különböző statisztikai függvényeket (ne kelljen már annyit gépelnünk) és adatstruktúrákat.</p>
+<p>A Python nyelv az eredeti nyolc pontból hét és félnek megfelel (lehet hogy egy csak az én személyes véleményem, de a 4. pontnak csak részben felel meg a pythonos lambdázás). A további két kritériumnak is megfeleltethetjük a kígyós nyelvet, de ehhez ki kell használnunk bővíthetőségét. A statisztikai elemzéshez és bonyolultabb adatstruktúrák létrehozásához szükségünk lehet a numpy/scipy csomagra, ezek használata kezdő kezekben bizony nagy teljesítmény csökkenéshez vezethet, nem beszélve hogy a nyelv &#8220;magján kívül&#8221; egy új csomagot kell elsajátítanunk.</p>
+<p><b>Összegzés</b><br />
+Mind a Python, mind az nltk hasznos és sokoldalú eszközök, de dizájnjukból fakadóan nem felelnek meg az általunk felállított kritériumoknak. A következő részben végre rátérünk arra hogy az R miért is ideális nyelvészeti elemzésekre, de persze semmi sem tökéletes, az R-nek is vannak hátrányai!</p>
+<div></div>
+<p>Via: <a title="R, de miért is használjam? - I." href="http://szamitogepesnyelveszet.blogspot.com/2010/07/r-de-miert-is-hasznaljam-i.html" target="_blank">R, de miért is használjam? &#8211; I.</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://r-projekt.hu/2010/07/29/r-de-miert-is-hasznaljam-i/feed/</wfw:commentRss>
+		<slash:comments>578</slash:comments>
+		</item>
+	</channel>
+</rss>

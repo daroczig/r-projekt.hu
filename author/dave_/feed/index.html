@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Dave_ &#8211; r-projekt.hu</title>
+	<atom:link href="http://r-projekt.hu/author/dave_/feed/" rel="self" type="application/rss+xml" />
+	<link>http://r-projekt.hu</link>
+	<description>R: az ingyenes adatelemző szoftver és statisztikai programozási környezet</description>
+	<lastBuildDate>Fri, 26 Mar 2021 00:15:32 +0000</lastBuildDate>
+	<language>hu</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.8.18</generator>
+	<item>
+		<title>Magyarország térképének kirajzolása MDS-sel</title>
+		<link>http://r-projekt.hu/2014/10/04/magyarorszag-terkepenek-kirajzolasa-mds-sel/</link>
+		<comments>http://r-projekt.hu/2014/10/04/magyarorszag-terkepenek-kirajzolasa-mds-sel/#comments</comments>
+		<pubDate>Sat, 04 Oct 2014 19:10:27 +0000</pubDate>
+		<dc:creator><![CDATA[Dave_]]></dc:creator>
+				<category><![CDATA[Egyéb]]></category>
+
+		<guid isPermaLink="false">http://r-projekt.hu/?p=17212</guid>
+		<description><![CDATA[A többdimenziós skálázást (MDS) egy dimenziócsökkentő eljárás, melyet először a földrajzban használtak térképek kirajzolására. Azóta számos más területen is alkalmazzák, pl. pszichológiában kognitív térképek. Ennek a bejegyzésnek a célja az MDS alkalmazásának bemutatása R-ben. Példaként Magyarország térképét fogjuk kirajzolni települések távolságmátrixának &#8230; <a href="http://r-projekt.hu/2014/10/04/magyarorszag-terkepenek-kirajzolasa-mds-sel/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>A többdimenziós skálázást (MDS) egy dimenziócsökkentő eljárás, melyet először a földrajzban használtak térképek kirajzolására. Azóta számos más területen is alkalmazzák, pl. pszichológiában kognitív térképek. Ennek a bejegyzésnek a célja az MDS alkalmazásának bemutatása R-ben. Példaként Magyarország térképét fogjuk kirajzolni települések távolságmátrixának felhasználásával.</p>
+<p><span id="more-17212"></span></p>
+<p>Hazánk távolságmátrixát a <a href="http://www.psoft.hu/termekek/telepules-matrix.html">http://www.psoft.hu/termekek/telepules-matrix.html</a> weboldalról lehet letölteni XLS formátumban.</p>
+<p>XLS fájl beolvasására bőven van választási lehetőség az R csomagok között: gdata, xlsReadWrite, XLConnect, xlsx, stb. Ezek közül én személy szerint az XLConnect csomagot használom, illetve fogom használni a példa során.</p>
+<p><strong>Adatok betöltése</strong>:</p>
+<p>Az adatok betöltését 2 lépésből oldjuk meg: Az xls fájl betöltése után az adatokat az első munkalapból olvassuk be, ugyanis ez tartalmazza a távolságokat.</p><pre class="crayon-plain-tag">library(XLConnect)
+
+wb &lt;- loadWorkbook("psoft-telepules-matrix-30000.xls")  # A munkafüzet beolvasása
+data &lt;- readWorksheet(wb, 1)                            # Az első munkalap betöltése</pre><p><strong>Adatok tisztítása</strong>:</p>
+<p>Az elemzés elvégzéséhez egy numerikus mátrixra van szükségünk, illetve a városok neveire. Amit alakítani kell a jelenlegi adathalmazon:</p>
+<ul>
+<li>Az első oszlopot tartalmazó városnevekből sorneveket csinálunk, majd töröljük.</li>
+<li>Utolsó sorban a psoft promo szövege található, amire értelemszerűen nincs szükségünk.</li>
+<li>Azonos városok távolságánál hiányzó, vagyis (NA) értékek szerepelnek, ezeket le kell cserélni 0-ra.</li>
+</ul>
+<p><strong>Megvalósítás</strong>:</p><pre class="crayon-plain-tag">rownames(data) &lt;- data[, 1]                             # Sornév létrehozása 
+data &lt;- data[-nrow(data), -1]                           # Utolsó sor és első oszlop elhagyása
+data[is.na(data)] &lt;- 0                                  # NA értékek lecserélése 0-ra.</pre><p>Kész is van a távolságmátrixunk, most már nekieshetünk a többdimenziós skálázásnak. MDS-re több lehetőség is van, én a legegyszerűbbet: a <strong>cmdscale </strong>függvényt alkalmazom, ami a stat package-en belül található. Paraméterként egy numerikus mátrixot, vagy data.frame-et kell megadni. Alapértelmezetten 2 dimenziót használ, ezt a k paraméterrel lehet állítani. Általában a priori módon határozzák meg.</p><pre class="crayon-plain-tag">MDS &lt;- cmdscale(data)</pre><p>A koordinátákat az MDS mátrix 2 oszlopa tartalmazza. Ezek alapján szeretnénk kirajzolni a térképet a ggplot2 quickplotja segítségével. Az első oszlop az x koordináta, a második pedig az y.</p><pre class="crayon-plain-tag">library(ggplot2)
+p &lt;- qplot(MDS[, 1], MDS[, 2], label=rownames(data))
+p &lt;- p + geom_text()
+p</pre><p><a href='http://r-projekt.hu/2014/10/04/magyarorszag-terkepenek-kirajzolasa-mds-sel/mds_plot1/'><img width="150" height="150" src="http://r-projekt.hu/wp-content/uploads/2014/10/MDS_Plot1-150x150.png" class="attachment-thumbnail size-thumbnail" alt="" /></a>
+</p>
+<p>Ezzel a probléma, hogy a tengelyek fel vannak cserélve. Az MDS ugyanis a távolságok alapján nem tudja megállapítani, hogy melyik város van északra, vagy éppen délre. Ha mindkét tengelyre tükrözzük a koordinátákat, akkor már ismerősebb lehet a plot.</p><pre class="crayon-plain-tag">p2 &lt;- qplot(-1*MDS[, 1], -1*MDS[, 2], label=rownames(data))
+p2 &lt;- p2 + geom_text()
+p2</pre><p><a href="http://r-projekt.hu/wp-content/uploads/2014/10/MDS_Plot2.png"><img class="alignnone size-medium wp-image-17319" src="http://r-projekt.hu/wp-content/uploads/2014/10/MDS_Plot2-300x206.png" alt="MDS_Plot2" width="300" height="206" srcset="http://r-projekt.hu/wp-content/uploads/2014/10/MDS_Plot2-300x206.png 300w, http://r-projekt.hu/wp-content/uploads/2014/10/MDS_Plot2.png 773w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p><strong>Ellenőrzés, a modell jósága</strong>:</p>
+<p>Az MDS lényege hogy egy adathalmazt dimenziócsökkentéssel könnyebben elemezhetővé tegyen. A dimenziócsökkentési eljárások a legtöbb esetben információveszteséggel járnak. A modell jóságát többféleképpen is ellenőrizhetjük, jelen esetben a determinációs hányados alapján fogunk dönteni.</p><pre class="crayon-plain-tag">library(MASS)
+shep &lt;- Shepard(data, MDS) 
+summary(lm(shep$yf ~ shep$x))$r.squared</pre><p>&nbsp;</p><pre class="crayon-plain-tag">0.9875959</pre><p>Az információveszteség mértéke kevesebb mint 2% tehát a modell kiemelkedően jónak számít.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://r-projekt.hu/2014/10/04/magyarorszag-terkepenek-kirajzolasa-mds-sel/feed/</wfw:commentRss>
+		<slash:comments>841</slash:comments>
+		</item>
+	</channel>
+</rss>
